@@ -10,16 +10,17 @@ function App() {
       { id: 3, name: "Item 3" },
     ],
   };
-  const listElements = state.clients.map((client) => {
-  return <li>{client.name} <button>x</button></li>
-  })
 
   return (
     <div className="main-container">
       <h1>Chamla</h1>
       <h2>Liste</h2>
       <ul>
-        {listElements}
+        {state.clients.map((client) => (
+          <li>
+            {client.name} <button>x</button>
+          </li>
+        ))}
       </ul>
       <form>
         <input type="text" placeholder="Add List Item"></input>
